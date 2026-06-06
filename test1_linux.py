@@ -99,16 +99,16 @@ def main():
 
             # 3. 写入 MIT 力矩命令
             # 保持 Windows 版 test1 原来的补偿关节和比例不变。
-            can.motors[4].MIT.torque_set = float(tau_g_motor[4])
+            can.motors[4].MIT.torque_set = float(tau_g_motor[4]*3)
             can.motors[4].set()
 
-            can.motors[3].MIT.torque_set = float(tau_g_motor[3])
+            can.motors[3].MIT.torque_set = float(tau_g_motor[3]*3)
             can.motors[3].set()
 
-            can.motors[2].MIT.torque_set = float(tau_g_motor[2] * 1.1)
+            can.motors[2].MIT.torque_set = float(tau_g_motor[2] * 1.35)
             can.motors[2].set()
 
-            can.motors[1].MIT.torque_set = float(tau_g_motor[1] * 1.1)
+            can.motors[1].MIT.torque_set = float(tau_g_motor[1] * 1.35)
             can.motors[1].set()
 
             # Python 主循环不要完全空转，否则会抢线程调度
